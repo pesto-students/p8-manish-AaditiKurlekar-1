@@ -1,0 +1,96 @@
+*{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#main{
+    width: 100%;
+    height: 100%;
+}
+a{
+    color: blue;
+}
+
+tr:nth-child(even) {
+    background-color:#dddddd;
+}
+table td{
+    padding: 5px;
+    align-items: center;
+    font-size: small;
+}
+footer {
+    font-size:small;
+    color: aliceblue;
+    display: flex;
+    padding: 6px;
+    width: 100%;
+    height: 10%;
+    background-color: cornflowerblue;
+}
+.sidebar {
+    background-color: #dddddd;
+    width: 3%;
+    display: flex;
+    padding: 2px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.header {
+    background-color: grey;
+    color: white;
+    display: flex;
+    padding: 30px;
+} 
+
+#parent{
+    height: 90%;
+    display: flex;
+}
+.pageContent{
+    width: 97%;
+}
+.tableData{
+    width: 100%;
+}
+.songButtons{
+    display: flex;
+    font-size: small;
+    justify-content:space-around;
+}
+.song{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 8px;
+}
+#songName{
+    font-size:large;
+    padding: 10px;
+}
+.details{
+    padding: 10px;
+    font-size:small;
+}
+.footerDetails{
+    margin: 5px;
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+.footerFeatureButtons{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 70%;
+    /* padding: 2px;;
+    justify-content: space-evenly; */
+}
+.footerSong{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+}
+
+
+
