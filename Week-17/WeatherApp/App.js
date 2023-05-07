@@ -4,6 +4,7 @@ import readline from "readline-sync"
 // TAKE INPUT
 console.log("For how many cities you need weather information");
 let cities = [];
+let abc= null;
 
 let totalCities = Number(readline.question());
 
