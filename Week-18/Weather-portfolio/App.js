@@ -5,9 +5,6 @@ const User = require("./models/user");
 const bodyParser = require("body-parser");
 const bcryptjs = require("bcryptjs");
 const app = express();
-const jwt = require("jsonwebtoken");
-
-const JWT_SECRET = "fahjfdakdhadgkagdk fkhgudjtkg";
 
 mongoose.connect("mongodb://0.0.0.0:27017/database", {
   useNewUrlParser: true,
@@ -67,7 +64,7 @@ app.post("/login", async function (req, res) {
 });
 
 app.post("/register", async function (req, res) {
-  console.log("Request body: ", req.body.username);
+  console.log("Request body: ", req.body);
 
   const username = req.body.username;
   const password = req.body.password;
@@ -77,7 +74,7 @@ app.post("/register", async function (req, res) {
   const alternatives = req.body.alternatives;
 
   // const password = await bcryptjs.hash(pass, 10);
-  const response = null;
+  let response = null;
   try {
     response = await User.create({
       username,
@@ -102,7 +99,7 @@ app.post("/register", async function (req, res) {
   }
 
   res.json({
-    status: "ok",
+    status: "success",
     response: response,
   });
   // take req data -- username, pass, etc..
@@ -122,9 +119,17 @@ app.get("/getInfo", async function (req, res) {
       password: password,
     }).exec();
 
+    let fixedIncome = userData[0]._doc.fixed_income;
+    console.log("fixedIncome", fixedIncome);
+
+    let sortedFixedIncomeArray = fixedIncome.sort(function (a, b) {
+      var x = a.year < b.year ? -1 : 1;
+      return x;
+    });
     res.json({
       status: "success",
-      response: userData,
+      info: "Fixed income filtered by year",
+      response: sortedFixedIncomeArray,
     });
   } catch (error) {
     res.json({ status: "error" });
@@ -176,7 +181,23 @@ app.post("/delete", async function (req, res) {
   }
 });
 
-var server = app.listen(8090, "192.168.101.3", function () {
+//delete
+app.post("/ClearAllData", async function (req, res) {
+  try {
+    const result = User.collection.drop();
+    res.json({
+      status: "success",
+      response: "Dropped database",
+    });
+  } catch (error) {
+    res.json({
+      status: "Error",
+      response: error,
+    });
+  }
+});
+
+var server = app.listen(8000, "192.168.101.3", function () {
   var host = server.address().address;
   var port = server.address().port;
   console.log("App listening at http://%s:%s", host, port);
