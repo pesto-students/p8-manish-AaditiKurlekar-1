@@ -1,0 +1,72 @@
+.MainScreen{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 30%;
+    background-color:wheat;
+    margin-left: auto;
+    margin-right: auto;
+}
+h2 {
+    text-align: center;
+    color:darkmagenta;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* todo-input */
+.input-wrapper{
+    display: flex;  
+    gap: 3px;
+    height: 30px;
+    border-color:lightgray;
+    margin: 5px;
+
+}
+
+.todo-input {
+    width: 80%;
+    border-color:lightgray;
+    border-radius: 5px;
+    font-family: cursive;
+}
+
+.add-button {
+    background-color: blueviolet;
+    width: 20%;
+    border-color:mediumorchid;
+    border-radius: 5px;
+    font-size:x-large;
+    color: beige;
+    text-align: center;
+    align-items: center;
+} 
+
+/* todo-list */
+.display-todos {
+    display: flex;
+    background-color:lightgrey;
+    margin: 5px;
+    justify-content: space-between;
+    border-radius: 5px;
+    height: 30px; 
+}
+
+.todo-name {
+    margin: 5px;
+    word-wrap: normal;
+    font-family: cursive;
+    width: 80%
+}
+
+.delete-button{
+    border-style: solid;
+    border-color: lightgray;
+    border-radius: 5px;
+    width: 20%;
+    align-content: end; 
+}
+.delete-icon {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    height: 90%;
+}

@@ -1,0 +1,56 @@
+html, body{
+    height: 100%;
+    width: 100%;
+}
+.red{
+    background-color: red;
+}
+.yellow{
+    background-color: yellow;
+}
+.blue{
+    background-color: blue;
+}
+.green{
+    background-color: green;
+}
+.red, .green, .blue, .yellow{
+    height: 100px;
+    width: 100px;
+    transition: 2s;
+}
+.parent{
+    display: flex;
+    margin-left: 100px;
+    margin-top: 100px;
+    z-index: 99;
+}
+h1{
+    z-index: -1;
+    left: 205px;
+    top: 65px;
+    position: absolute;
+}
+.main{
+    position: relative;
+}
+.parent:hover .blue{
+    transform: rotate(90deg);
+    margin-left: 50px;
+}
+.parent:hover .red{
+    transform: rotate(90deg);
+    margin-right: 50px;
+
+}
+.parent:hover .yellow{
+    transform: rotate(90deg);
+    margin-right: 50px;
+
+}
+.parent:hover .green{
+    transform: rotate(90deg);
+    margin-left: 50px;
+
+}
+   
